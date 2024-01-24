@@ -17,11 +17,11 @@ body {
     "footer footer";
   gap: 0px;
   grid-template-columns: 20% 80%;
-  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
 }
 /*Indicaciones para desktop*/
 @media (min-width: 576px) {
-  .burger i {
+  menu i {
     display: none;
   }
 }
@@ -37,9 +37,6 @@ body {
       "footer";
     grid-template-rows: 5% 8% 1fr 5%;
     grid-template-columns: 100%;
-  }
-  menu {
-    padding: 5px; /* Ajusta el relleno según sea necesario */
   }
   menu ul li {
     display: none;
@@ -59,11 +56,8 @@ nav {
   grid-area: nav;
   background-color: #1baae2;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 2rem;
-  text-align: center;
 }
 .caja-filtro {
   display: flex;
@@ -98,25 +92,25 @@ nav {
   text-align: center;
 }
 .caja-logo {
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 .logo-tremac {
-  display: flex;
-  min-width: 30px;
-  height: 30px;
-  align-items: flex-start;
-  justify-content: center;
-  margin: auto;
   padding: 0px;
+  position: relative;
+  align-items: center;
+}
+menu i {
+  color: grey;
 }
 
-.burger {
-  justify-content: flex-end;
-  padding: 0px;
-  margin: auto;
-  padding-left: 2rem;
+menu img {
+  width: 75%;
+  height: 70%;
 }
+
 ul {
   list-style: none;
   gap: 1rem;
@@ -135,7 +129,7 @@ ul li {
 }
 menu {
   grid-area: menu;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   padding: 0px;
 }
 main {
@@ -148,12 +142,11 @@ footer {
 }
 .Categorias-contenedor {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  flex-direction: column;
   align-content: center;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: lightgrey;
   color: black;
   margin: 0px;
 }
@@ -184,7 +177,15 @@ menu h5 {
   align-items: center;
   border: none;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
 }
+
+.card:hover .card-img {
+  filter: grayscale(0%);
+}
+
 .card-titulo {
   font-size: 24px;
   padding-top: 16px;
@@ -211,7 +212,10 @@ menu h5 {
   background-position: center;
   object-fit: cover;
   box-sizing: border-box;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
 }
+
 .paginas {
   display: flex;
   flex-direction: row;
